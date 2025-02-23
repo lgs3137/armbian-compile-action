@@ -48,7 +48,7 @@ runs:
           echo "desktop-environment=gnome" >> $GITHUB_ENV
           echo "desktop-environment-config-name=config_base" >> $GITHUB_ENV
           echo "expert=yes" >> $GITHUB_ENV
-          echo "desktop_appgroups_selected=\"browsers chat desktop_tools editors email internet multimedia office programming remote_desktop\"" >> $GITHUB_ENV
+          echo "desktop_appgroups_selected=\"browsers desktop_tools internet programming remote_desktop\"" >> $GITHUB_ENV
         elif [ ${{ inputs.flavor }} == "cli" ]
         then
           echo "release=noble" >> $GITHUB_ENV
@@ -98,7 +98,9 @@ runs:
             DEBUG=yes \
             KERNEL_GIT=shallow \
             IMAGE_XZ_COMPRESSION_RATIO=9 \
-            COMPRESS_OUTPUTIMAGE=sha,gpg,xz
+            COMPRESS_OUTPUTIMAGE=sha,gpg,xz \
+            DEST_LANG=zh_CN.UTF-8 \
+            TZDATA=Asia/Shanghai
         fi
     - name: Upload
       if: inputs.release-id != '' && inputs.github-token != ''
