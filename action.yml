@@ -48,7 +48,7 @@ runs:
           echo "desktop-environment=gnome" >> $GITHUB_ENV
           echo "desktop-environment-config-name=config_base" >> $GITHUB_ENV
           echo "expert=yes" >> $GITHUB_ENV
-          echo "desktop_appgroups_selected=\"browsers desktop_tools internet programming remote_desktop\"" >> $GITHUB_ENV
+          echo "desktop_appgroups_selected=\"browsers remote_desktop\"" >> $GITHUB_ENV
         elif [ ${{ inputs.flavor }} == "cli" ]
         then
           echo "release=noble" >> $GITHUB_ENV
