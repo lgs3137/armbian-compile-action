@@ -93,7 +93,7 @@ runs:
             DESKTOP_ENVIRONMENT_CONFIG_NAME=${{ env.desktop-environment-config-name }} \
             DESKTOP_APPGROUPS_SELECTED=${{ env.desktop_appgroups_selected }} \
             EXPERT=${{ env.expert }} \
-            BOARD_FIRMWARE_INSTALL="-full" \
+            BOARD_FIRMWARE_INSTALL="-full=24.11.2" \
             SHARE_LOG=yes \
             DEBUG=yes \
             KERNEL_GIT=shallow \
